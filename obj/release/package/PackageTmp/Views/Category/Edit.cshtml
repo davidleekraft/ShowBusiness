@@ -1,0 +1,48 @@
+﻿@model UnhandledExceptionProject.Models.Category
+
+@{
+    ViewBag.Title = "Edit";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+     @{
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.category_ID)
+    @Html.HiddenFor(model => model.category_title)
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Edit: @Html.DisplayFor(model => model.category_title)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.category_desc)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.category_desc)
+                                                @Html.ValidationMessageFor(model => model.category_desc)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.time_period)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.time_period)
+                                                @Html.ValidationMessageFor(model => model.time_period)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

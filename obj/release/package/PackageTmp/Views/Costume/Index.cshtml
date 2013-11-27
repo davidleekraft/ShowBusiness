@@ -1,0 +1,49 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Costume>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+      <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model) {
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">@Html.DisplayFor(modelItem => item.name)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.creation_date)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.creation_date)</td>
+                        <td class="indexinfo" rowspan="3"><img src="~/Content/Photos/Costumes/@Html.DisplayFor(modelItem => item.photo)" /></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.last_altered)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.last_altered)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.num_pieces)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.num_pieces)</td>
+                    </tr>
+                    <tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.costume_ID }) |
+                        @Html.ActionLink("Delete", "Delete", "Costume", new { id = item.costume_ID }, new { @class = "delete" })
+                    </td>
+                    </tr>
+            </table>
+            </div>
+          }
+          </div>
+      </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}

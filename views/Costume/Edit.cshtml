@@ -1,0 +1,54 @@
+﻿@model UnhandledExceptionProject.Models.Costume
+
+@{
+    ViewBag.Title = "Edit";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+     @{
+         //Renders a partial view which holds the template HTML for the browse page
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+     //Begins an HTML form
+     
+     //Allows for validation
+    @Html.ValidationSummary(true)
+
+     //Hides these values to be sent when the form is submitted
+    @Html.HiddenFor(model => model.costume_ID)
+    @Html.HiddenFor(model => model.name)
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Edit: @Html.DisplayFor(model => model.name)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.last_altered)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.last_altered)
+                                                @Html.ValidationMessageFor(model => model.last_altered)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.num_pieces)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.num_pieces)
+                                                @Html.ValidationMessageFor(model => model.num_pieces)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

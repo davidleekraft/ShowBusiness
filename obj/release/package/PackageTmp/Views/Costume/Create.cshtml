@@ -1,0 +1,62 @@
+﻿@model UnhandledExceptionProject.Models.Costume
+
+@{
+    ViewBag.Title = "Create Costume";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+     @{
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+     @Html.AntiForgeryToken()
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Create New Costume</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.name)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.name)
+                                                @Html.ValidationMessageFor(model => model.name)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.creation_date)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.creation_date)
+                                                @Html.ValidationMessageFor(model => model.creation_date)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.last_altered)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.last_altered)
+                                                @Html.ValidationMessageFor(model => model.last_altered)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.num_pieces)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.num_pieces)
+                                                @Html.ValidationMessageFor(model => model.num_pieces)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">Name of photo file</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.photo)
+                                                @Html.ValidationMessageFor(model => model.photo)</td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

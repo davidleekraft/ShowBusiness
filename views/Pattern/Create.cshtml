@@ -1,0 +1,50 @@
+﻿@model UnhandledExceptionProject.Models.Pattern
+
+@{
+    ViewBag.Title = "Create";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+     @{
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+     @Html.AntiForgeryToken()
+     
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Add Pattern</td>
+                    </tr>
+                    <tr>
+                        @*Display all properties of a Pattern that can be created*@ 
+                        <td class="indexlabel">@Html.LabelFor(model => model.photo)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.photo)
+                                                @Html.ValidationMessageFor(model => model.photo)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.description)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.description)
+                                                @Html.ValidationMessageFor(model => model.description)
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

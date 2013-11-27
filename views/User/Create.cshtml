@@ -1,0 +1,140 @@
+﻿@model UnhandledExceptionProject.Models.User
+
+@{
+    ViewBag.Title = "Show Business: Sign Up";
+}
+
+<style>
+    h1 {
+        text-align: center;
+    }
+    #createForm {
+        width: 75%;
+        border: 2px solid #c69d55;
+        border-radius: 25px;
+        background-color: white;
+        margin: auto;
+        padding: 10%;
+        padding-top: 5px;
+        color: black;
+    }
+
+</style>
+
+<h1 style="text-shadow: 5px 5px 5px #c69d55;">Sign Up</h1>
+  
+    <div id="createForm">
+
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend> Fill out the following information to create an account. </legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userName)
+            @Html.ValidationMessageFor(model => model.userName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userPass)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.userPass, new { type = "password", @minlength = "6"})
+            @Html.ValidationMessageFor(model => model.userPass)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.firstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.firstName)
+            @Html.ValidationMessageFor(model => model.firstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.middleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.middleName)
+            @Html.ValidationMessageFor(model => model.middleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lastName)
+            @Html.ValidationMessageFor(model => model.lastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.streetAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.streetAddress1, new { style = "width: 250px" })
+            @Html.ValidationMessageFor(model => model.streetAddress1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.streetAddress2)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.streetAddress2, new { style = "width: 250px" })
+            @Html.ValidationMessageFor(model => model.streetAddress2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.apt)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.apt, new { @maxlength = "5", style = "width: 75px" })
+            @Html.ValidationMessageFor(model => model.apt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.city)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.city)
+            @Html.ValidationMessageFor(model => model.city)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.state)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.state, new { @maxlength = "2", style = "width: 40px" })
+            @Html.ValidationMessageFor(model => model.state)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zip)
+        </div>
+        <div class="editor-field">
+
+            @Html.TextBoxFor(model => model.zip, new { @maxlength = "5", style = "width: 75px" }) - 
+            @Html.TextBoxFor(model => model.zipExt, new { @maxlength = "4", style = "width: 60px" })
+            @Html.ValidationMessageFor(model => model.zip)
+            @Html.ValidationMessageFor(model => model.zipExt)
+        </div>
+
+        <br /><br />
+
+        <p>
+            <input type="submit" value="Create" /> @Html.ActionLink("Cancel", "Index", "Home")
+        </p>
+    </fieldset>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+    </div>

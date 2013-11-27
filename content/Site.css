@@ -1,0 +1,358 @@
+﻿input {
+    padding: 5px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    font-size: 11px;
+    font-family: Tahoma;
+    width: 200px;
+}
+
+select {
+    width: 200px;
+}
+
+    input[type=text],
+    input[type=password] {
+        width: 160px;
+    }
+
+    input[type=submit] {
+        width: 160px;
+        color: #000;
+    }
+
+.editor-label, .display-label {
+    margin: 5px;
+    text-transform: uppercase;
+    font-family: tahoma;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-align: left;
+    color: #000;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.button {
+    padding-left: 30px;
+    padding-right: 30px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    font-size: 16px;
+    font-family: Georgia;
+    font-weight: bold;
+    float: right;
+}
+
+a.signup:link {
+    font-family: Georgia;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0px;
+    text-decoration: none;
+    font-weight: bold;
+    float: left;
+    color: #c69d55;
+    margin: 8px;
+}
+
+a.signup:visited {
+    color: #c69d55;
+}
+
+a.signup:hover {
+    color: #000;
+}
+
+a.footer:link {
+    font-family: Tahoma;
+    font-size: 11px;
+    text-transform: none;
+    letter-spacing: 0px;
+    text-decoration: none;
+    color: #c69d55;
+    margin: 8px;
+}
+
+a.footer:visited {
+    color: #c69d55;
+}
+
+a.footer:hover {
+    color: #fff;
+}
+
+span.footer {
+    font-family: Tahoma;
+    font-size: 11px;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Styles for specific page elements */
+
+/*LOGIN VIEW*/
+.loginbg {
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: auto !important;
+    max-height: 650px;
+    min-height: 650px;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    overflow:scroll;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+div.login {
+    position:fixed;
+    margin-top: 175px;
+    right: 0;
+    left: 0;
+}
+
+div.loginfields {
+    background-color: #fff;
+    border:2px solid #c69d55;
+    border-radius:15px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px;
+}
+
+h2.login {
+    color: #fff;
+    font-family: Georgia;
+    text-transform: none;
+    letter-spacing: 2px;
+    font-style: none;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 18px;
+    text-shadow: 0px 0px 8px #000;
+}
+
+div.top {
+    padding-top: 700px;
+}
+
+/* Header items */
+
+div.navigation {
+    margin-top: 50px;
+}
+
+img.header {
+    width: 400px;
+}
+
+div.red {
+    /* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(left, #000000 0%, #C69D55 10%, #000000 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(left, #000000 0%, #C69D55 10%, #000000 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(left, #000000 0%, #C69D55 10%, #000000 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #000000), color-stop(0.1, #C69D55), color-stop(1, #000000));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(left, #000000 0%, #C69D55 10%, #000000 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to right, #000000 0%, #C69D55 10%, #000000 100%);
+    height: 25px;
+}
+
+/* Dashboard items */
+
+h1.dash {
+    font-family: Georgia;
+    letter-spacing: -2px;
+    font-size: 36px;
+    color: #c69d55;
+}
+
+div.dash {
+    height: 400px;
+    width: 100%;
+    background-color: #fff;
+    border:1px solid #ddd;
+    border-radius:28px;
+    margin-bottom: 50px;
+    color: black;
+    padding: 15px;
+}
+
+div.updates {
+    width: 200px;
+    height: 100%;
+}
+
+ul.updates {
+    list-style-type: none;
+    font-family: Tahoma;
+    text-transform: uppercase;
+    font-size: 9px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 2px;
+    overflow: scroll;
+}
+
+    ul.updates li {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        background-color: #e2c083;
+        border-bottom: 2px dashed #fff;
+    }
+
+h1.updates {
+    width: 100%;
+    padding-left: 8px;
+    background-color: #c69d55;
+    font-family: Georgia;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div.dashoptions {
+    width: 600px;
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 25px;
+}
+
+h1.dashoptions {
+    padding-left: 25px;
+    font-family: Georgia;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-weight: bold;
+    color: #c69d55;
+    text-shadow: 0px 0px 3px #000;
+}
+
+a.dashoptions {
+    padding-left: 30px;
+    padding-right: 30px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    font-size: 16px;
+    font-family: Georgia;
+    font-weight: bold;
+    margin: 25px;
+}
+
+
+
+/* Browse Items */
+
+div.entities {
+    width: 100%;
+    padding: 8px;
+    border:1px solid #000;
+    border-radius:8px;
+    margin-top: -40px;
+    color: #000;
+}
+
+div.options {
+    width: 100%;
+    border-radius:4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 8px;
+    color: #000;
+}
+
+div.browse {
+    height: 500px;
+    width: 865px;
+    overflow: scroll;
+    background-color: #fff;
+    color: #000;
+    margin-bottom: 25px;
+    margin-left: -30px;
+    margin-top: -30px;
+    padding: 10px;
+}
+
+/* Index table properties */
+
+td.index {
+    font-family: Georgia;
+    color: #c69d55;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    padding: 5px;
+}
+
+td.indexlabel {
+    font-style: italic;
+    font-family: Georgia;
+    font-size: 14px;
+    width: 200px;
+    background-color: #f2eadb;
+}
+
+td.indexinfo {
+    padding: 8px;
+    width: 300px;
+    background-color: #f2eadb;
+}
+
+p.browse {
+    font-family: Georgia;
+    font-style: italic;
+    font-size: 18px;
+    padding: 25px;
+}
+
+/* Other components */
+
+textarea.terms {
+    width: 100%;
+    height: 100%;
+}

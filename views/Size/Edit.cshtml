@@ -1,0 +1,84 @@
+﻿@model UnhandledExceptionProject.Models.Size
+
+@{
+    ViewBag.Title = "Edit";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+     @{
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.size_ID)
+     
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Edit Size: @Html.DisplayFor(model => model.size_ID)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">Performer</td>
+                        <td class="indexinfo">
+                            <select id="performer_ID" name="performer_ID">
+                                @foreach (var choice in ViewBag.PerformerList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(model => model.performer_ID)
+                        </td>
+                        <td class="indexlabel">Prop</td>
+                        <td class="indexinfo">
+                            <select id="prop_ID" name="prop_ID">
+                                @foreach (var choice in ViewBag.PropList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(model => model.prop_ID)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">Garment</td>
+                        <td class="indexinfo">
+                            <select id="garment_ID" name="garment_ID">
+                                @foreach (var choice in ViewBag.GarmentList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(model => model.garment_ID)
+                        </td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.type)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.type)
+                                                @Html.ValidationMessageFor(model => model.type)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.value)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.value)
+                                                @Html.ValidationMessageFor(model => model.value)</td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Rental>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+      <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model) {
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Rental For: @Html.DisplayFor(modelItem => item.renter_ID)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.prop_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.prop_ID)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.garment_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.garment_ID)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.date_taken)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.date_taken)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.date_returned)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.date_returned)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.cond_returned)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.cond_returned)</td>
+                        <td class="indexlabel"> </td><td class ="indexinfo"> </td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.cost)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.cost)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.in_out)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.in_out)</td>
+                    </tr>
+                    <tr>
+                        
+                    </tr>
+                    <tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.rental_ID }) |
+                        @Html.ActionLink("Delete", "Delete", "Rentals", new { id = item.rental_ID }, new { @class = "delete" })
+                    </td>
+                    </tr>
+            </table>
+            </div>
+          }
+          </div>
+      </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Damage>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+    <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model)
+            {
+                <div class="index">
+                    <table class="index">
+                        <tr>
+                            <td class="index" colspan="5">Damage: @Html.DisplayFor(modelItem => item.damage_ID)</td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.garment_ID)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.garment_ID)</td>
+                            <td class="indexlabel"></td>
+                            <td class="indexinfo"></td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.prop_ID)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.prop_ID)</td>
+                            <td class="indexlabel"></td>
+                            <td class="indexinfo"></td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.date_damaged)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.date_damaged)</td>
+                            <td class="indexlabel"></td>
+                            <td class="indexinfo"></td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.exp_repair_date)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.exp_repair_date)</td>
+                            <td class="indexlabel"></td>
+                            <td class="indexinfo"></td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.repaired_date)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.repaired_date)</td>
+                            <td class="indexlabel"> </td>
+                            <td class="indexinfo"> </td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.repair_desc)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.repair_desc)</td>
+                            <td class="indexlabel"> </td>
+                            <td class="indexinfo"> </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.damage_ID }) |
+                                @Html.ActionLink("Delete", "Delete", "Damages", new { id = item.damage_ID }, new { @class = "delete" })
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+

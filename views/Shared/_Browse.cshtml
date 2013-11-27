@@ -1,0 +1,152 @@
+﻿<div class="row">
+      <div class="col-md-12">
+          <div class="options">
+              <nav class="navbar navbar-default" role="navigation">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Options</a>
+                  </div>
+                  
+                </nav>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+          <div class="entities">
+              <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          Garments
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        @Html.ActionLink("Create", "Create", "Garment")<br />
+                        @Html.ActionLink("View All", "Index", "Garment")
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                          Costumes
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        @Html.ActionLink("Create", "Create", "Costume")<br />
+                        @Html.ActionLink("View All", "Index", "Costume")
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                          Props
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        @Html.ActionLink("Create", "Create", "Prop")<br />
+                        @Html.ActionLink("View All", "Index", "Prop")
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                          Record Changes
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        @Html.ActionLink("Add New Alteration", "Create", "Alterations")<br />
+                        @Html.ActionLink("View Recent Alterations", "Index", "Alterations")<br />
+                          <hr />
+                        @Html.ActionLink("Add New Damage", "Create", "Damages")<br />
+                        @Html.ActionLink("View All Damages", "Index", "Damages")
+                          <hr />
+                        @Html.ActionLink("Record Sizes", "Create", "Size")<br />
+                        @Html.ActionLink("View Sizes", "Index", "Size")
+                      </div>
+                    </div>
+                  </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                          Design Components
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        @Html.ActionLink("Create New Material", "Create", "Material")<br />
+                        @Html.ActionLink("View Stored Materials", "Index", "Material")<br />
+                          <hr />
+                        @Html.ActionLink("Create New Pattern", "Create", "Pattern")<br />
+                        @Html.ActionLink("View Stored Patterns", "Index", "Pattern")<br />
+                          <hr />
+                        @Html.ActionLink("Create New Category", "Create", "Category")<br />
+                        @Html.ActionLink("View Current Categories", "Index", "Category")<br />
+                      </div>
+                    </div>
+                  </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                          Record Rentals
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        @Html.ActionLink("Add New Rental", "Create", "Rentals")<br />
+                        @Html.ActionLink("View All Rentals", "Index", "Rentals")<br />
+                          <hr />
+                        @Html.ActionLink("Store New Renter", "Create", "Renters")<br />
+                        @Html.ActionLink("View Renters", "Index", "Renters")
+                          <hr />
+                        @Html.ActionLink("Add Storage Location", "Create", "Storage")<br />
+                        @Html.ActionLink("View Storage Locations", "Index", "Storage")
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+                          Productions
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        @Html.ActionLink("Add Production", "Create", "Production")<br />
+                        @Html.ActionLink("View All Productions", "Index", "Production")<br />
+                          <hr />
+                        @Html.ActionLink("Add Performer", "Create", "Performer")<br />
+                        @Html.ActionLink("View Performers", "Index", "Performer")
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </div>

@@ -1,0 +1,86 @@
+﻿@model UnhandledExceptionProject.Models.Storage
+
+@{
+    ViewBag.Title = "Create";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-9">
+            <div class="browse">
+                <div class="index">
+                    <table class="index">
+                        <tr>
+                            <td class="index" colspan="5">Add Storage Location</td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.LabelFor(model => model.location_desc)</td>
+                            <td class="indexinfo">
+                                @Html.EditorFor(model => model.location_desc)
+                            @Html.ValidationMessageFor(model => model.location_desc)
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.environment)</td>
+                        <td class="indexinfo">
+                            @Html.EditorFor(model => model.environment)
+                        @Html.ValidationMessageFor(model => model.environment)
+                    </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                </tr>
+                <tr>
+                    <td class="indexlabel">@Html.LabelFor(model => model.container)</td>
+                    <td class="indexinfo">
+                        @Html.EditorFor(model => model.container)
+                        @Html.ValidationMessageFor(model => model.container)
+                    </td>
+                    <td class="indexlabel"></td>
+                    <td class="indexinfo"></td>
+                </tr>
+                <tr>
+                    <td class="indexlabel">@Html.LabelFor(model => model.in_house)</td>
+                    <td class="indexinfo">
+                        @Html.EditorFor(model => model.in_house)
+                        @Html.ValidationMessageFor(model => model.in_house)
+                    </td>
+                    <td class="indexlabel"></td>
+                    <td class="indexinfo"></td>
+                </tr>
+                <tr>
+                    <td class="indexlabel">@Html.LabelFor(model => model.handling_instructions)</td>
+                    <td class="indexinfo">
+                        @Html.EditorFor(model => model.handling_instructions)
+                        @Html.ValidationMessageFor(model => model.handling_instructions)
+                    </td>
+                    <td class="indexlabel"></td>
+                    <td class="indexinfo"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+    }
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

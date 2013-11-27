@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+      <div class="col-md-9">
+          <div class="browse">
+              <p class="browse">Hello! Please choose from the items to the left to begin managing your inventory.</p>
+          </div>
+      </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_Footer");
+}

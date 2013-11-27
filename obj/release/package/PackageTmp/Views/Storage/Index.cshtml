@@ -1,0 +1,59 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Storage>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+    <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model)
+            {
+                <div class="index">
+                    <table class="index">
+                        <tr>
+                            <td class="index" colspan="5">Storage Location: @Html.DisplayFor(modelItem => item.location_desc)</td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.location_desc)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.location_desc)</td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.environment)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.environment)</td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.container)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.container)</td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.in_house)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.in_house)</td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.handling_instructions)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.handling_instructions)</td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.storage_ID }) |
+                                @Html.ActionLink("Delete", "Delete", "Storage", new { id = item.storage_ID }, new { @class = "delete" })
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+

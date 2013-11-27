@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Advanced Search";
+    Html.RenderPartial("_Header");
+}
+
+<h2>Advanced Inventory Search</h2>
+<h4>Enter a criteria to search through inventory:<br />
+</h4>
+
+<!-- These dropdown lists will eventually be generated from models built from our database.
+     For now, they are manually entered so as to provide an example of what they will eventually look like. -->
+
+<form>
+<table>
+    <tr>
+        <td><label>Search for item:</label></td>
+        <td>
+            <select style="width: 300px">
+                <option>-</option>
+                <option>Garment</option>
+                <option>Costumer</option>
+                <option>Prop</option>
+                <option>Performer</option>
+                <option>Category</option>
+                <option>Pattern</option>
+                <option>Material</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><span style="color: red">The fields below will differ depending on which item the user has selected above.<br />
+                                                    We will have jQuery generating these fields and changing them.<br />
+                                                    The following are example fields for if the user has selected to search for a garment.</span>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Keywork:</label></td>
+        <td>
+            <select style="width: 100px">
+                <option>Name</option>
+                <option>Description</option>
+            </select>
+            <input type="text" style="width: 190px" />
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="radio" name="keyword"/> Contains <input type="radio" name="keyword"/> Exact Match
+        </td>
+    </tr>
+    <tr>
+        <td><label>Garment Type:</label></td>
+        <td>
+            <select style="width: 300px">
+                <option>-</option>
+                <option>Garment</option>
+                <option>Garment</option>
+                <option>Garment</option>
+                <option>Garment</option>
+                <option>Garment</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Category:</label></td>
+        <td>
+            <select style="width: 300px">
+                <option>-</option>
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Used in Production:</label></td>
+        <td>
+            <select style="width: 300px">
+                <option>-</option>
+                <option>Production</option>
+                <option>Production</option>
+                <option>Production</option>
+                <option>Production</option>
+                <option>Production</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Material:</label></td>
+        <td>
+            <select style="width: 300px">
+                <option>-</option>
+                <option>Material</option>
+                <option>Material</option>
+                <option>Material</option>
+                <option>Material</option>
+                <option>Material</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Pattern:</label></td>
+        <td>
+            <select style="width: 300px">
+                <option>-</option>
+                <option>Pattern</option>
+                <option>Pattern</option>
+                <option>Pattern</option>
+                <option>Pattern</option>
+                <option>Pattern</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" /> Rentable</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" /> Clean</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" /> Available</td>
+    </tr>
+    <tr>
+        <td>
+            <button type="reset">Reset</button>
+            <button type="reset">Search</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+
+
+

@@ -1,0 +1,122 @@
+﻿@model UnhandledExceptionProject.Models.Prop
+
+@{
+    ViewBag.Title = "Edit";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+     @{
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.prop_ID)
+
+    @Html.HiddenFor(model => model.name)
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        @*Display the Prop's Name that you wish to edit*@
+                        <td class="index" colspan="5">Edit: @Html.DisplayFor(model => model.name)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.description)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.description)
+                                                @Html.ValidationMessageFor(model => model.description)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.rented)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.rented)
+                                                @Html.ValidationMessageFor(model => model.rented)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">Main Category</td>
+                      <td class="indexinfo"><select id="main_category_ID" name="main_category_ID">
+
+                          @*Loop through everything in the CategoryList Viewbag and display each option as a dropdown list*@
+                            @foreach (var choice in ViewBag.CategoryList)
+                            {
+                                <option value="@choice">@choice</option>
+                            }
+                        </select>
+                          @Html.ValidationMessageFor(model => model.main_category_ID)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.rentable)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.rentable)
+                                                @Html.ValidationMessageFor(model => model.rentable)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">Sub Category</td>
+                        <td class="indexinfo"><select id="sub_category_ID" name="sub_category_ID">
+
+                            @*Loop through everything in the CategoryList Viewbag and display each option as a dropdown list*@
+                            @foreach (var choice in ViewBag.CategoryList)
+                            {
+                                <option value="@choice">@choice</option>
+                            }
+                        </select>
+                          @Html.ValidationMessageFor(model => model.sub_category_ID)</td>
+                        <td class="indexlabel">Material</td>
+                        <td class="indexinfo"><select id="material_ID" name="material_ID">
+
+
+                            @*Loop through everything in the MaterialList Viewbag and display each option as a dropdown list*@
+                            @foreach (var choice in ViewBag.MaterialList)
+                            {
+                                <option value="@choice">@choice</option>
+                            }
+                        </select>
+
+                                                @Html.ValidationMessageFor(model => model.material_ID)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.last_cleaned_date)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.last_cleaned_date)
+                                                @Html.ValidationMessageFor(model => model.last_cleaned_date)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.cleaning_instr)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.cleaning_instr)
+                                                @Html.ValidationMessageFor(model => model.cleaning_instr)</td>
+                    </tr>
+                    <tr>
+                    <td class="indexlabel">@Html.LabelFor(model => model.storage_ID)</td>
+                        <td class="indexinfo">
+                            <select id="storage_ID" name="storage_ID">
+                                @*Loop through everything in the StorageLocationList Viewbag and display each option as a dropdown list*@
+                                @foreach(var choice in ViewBag.StorageLocationList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(model => model.storage_ID)
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.photo)</td>
+                        <td class="indexinfo">
+                            @Html.EditorFor(model => model.photo)
+                            @Html.ValidationMessageFor(model => model.photo)
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Privacy Information";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-11"><h1 class="dash">Privacy Policies</h1></div>
+      <!-- We need to add the user's name to the welcome statement -->
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="dash">
+            <textarea class="terms">
+                Suspendisse et scelerisque lorem. Maecenas nec ultrices nisi, sed dapibus dolor. Sed dui risus, posuere sit amet elementum non, sodales vel quam. Curabitur mollis hendrerit magna. Quisque lacus urna, hendrerit at dolor ut, auctor suscipit metus. Maecenas pharetra rutrum arcu vel tempor. Proin aliquam sodales nisl in congue. Phasellus cursus pharetra enim at ullamcorper. Nulla pulvinar arcu et dolor placerat, laoreet porta eros molestie. Cras blandit augue et orci ullamcorper, et vehicula quam gravida. Morbi congue elit nisl, ut aliquet libero rutrum quis.
+
+Etiam et condimentum tortor. Fusce ut accumsan libero, sed aliquam orci. Nam metus arcu, porttitor vitae sapien eu, dignissim sollicitudin felis. Donec placerat eros id libero facilisis, sit amet facilisis ipsum sollicitudin. Donec auctor quis leo sed fringilla. Fusce urna nisi, suscipit vel nibh ut, pulvinar rutrum mi. Sed volutpat scelerisque mi, sed posuere nulla varius id. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Nullam porttitor orci eu congue varius. Praesent consectetur urna dolor, et rhoncus est posuere eu. Donec non orci sit amet nulla blandit sodales. Nam faucibus nisi vulputate magna egestas, vitae posuere elit eleifend. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris enim sem, feugiat pretium pretium ut, scelerisque eu velit. Curabitur volutpat magna et orci vestibulum, sit amet eleifend erat iaculis. Aliquam erat volutpat. Morbi sollicitudin vehicula risus, sit amet interdum est. Nulla quis aliquet est. Quisque suscipit vel nulla ac imperdiet. Vivamus elementum nec tortor ut ultrices. Vestibulum luctus varius mauris at dignissim. Vivamus rutrum diam quis sapien elementum, id dictum erat varius. Duis tempus fringilla congue. Sed a ante eget quam porttitor commodo.
+
+Phasellus sed diam ac ligula ultricies varius. Sed aliquet diam sit amet enim varius, ac pulvinar diam ultrices. Sed commodo, quam ultrices mattis aliquam, massa quam sollicitudin lorem, vel gravida mauris diam convallis dolor. Aenean sagittis tortor ac mollis dignissim. Aenean molestie faucibus mattis. Proin scelerisque enim ac lectus gravida hendrerit. Nunc imperdiet interdum enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam suscipit dictum diam, id vehicula quam vestibulum quis. Aliquam erat volutpat. Vivamus vitae adipiscing felis, sed vestibulum tortor. Aenean lorem lectus, porttitor euismod mi et, condimentum viverra erat.
+
+Phasellus id condimentum metus, sit amet facilisis felis. Aliquam id euismod purus. In hac habitasse platea dictumst. Duis scelerisque lacus eros, vitae lacinia metus luctus ac. Nam interdum faucibus libero eget ultricies. Etiam sit amet congue elit, eget vestibulum metus. Vestibulum dictum eget urna nec malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed vitae justo enim. Nullam sollicitudin auctor vehicula. Etiam scelerisque dolor lacus, ut accumsan lorem viverra vitae. Nullam vitae auctor augue. Donec scelerisque adipiscing purus, et vestibulum nisi commodo in.    
+            </textarea>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

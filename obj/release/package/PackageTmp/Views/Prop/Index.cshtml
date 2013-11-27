@@ -1,0 +1,70 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Prop>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+      <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model) {
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">@Html.DisplayFor(modelItem => item.name)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.description)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.description)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.rented)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.rented)</td>
+                        <td class="indexinfo" rowspan="5"><img src="~/Content/Photos/Props/@Html.DisplayFor(modelItem => item.photo)" /></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.main_category_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.main_category_ID)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.rentable)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.rentable)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.sub_category_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.sub_category_ID)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.material_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.material_ID)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.last_cleaned_date)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.last_cleaned_date)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.cleaning_instr)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.cleaning_instr)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.storage_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.storage_ID)</td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        
+                    </tr>
+                    <tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.prop_ID }) |
+                        @Html.ActionLink("Delete", "Delete", "Prop", new { id = item.prop_ID }, new { @class = "delete" })
+                    </td>
+                    </tr>
+            </table>
+            </div>
+          }
+          </div>
+      </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}

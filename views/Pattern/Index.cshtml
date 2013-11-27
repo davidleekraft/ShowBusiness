@@ -1,0 +1,42 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Pattern>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+      <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model) {
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        @*Display the Pattern's description*@ 
+                        <td class="index" colspan="2">@Html.DisplayFor(modelItem => item.description)</td>
+                        <td>
+                            @*Create links that allow the user to edit and delete Patterns*@ 
+                            @Html.ActionLink("Edit", "Edit", new { id = item.pattern_ID }) |
+                            @Html.ActionLink("Delete", "Delete", "Pattern", new { id = item.pattern_ID }, new { @class = "delete" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="indexinfo" rowspan="5"><img src="~/Content/Photos/Patterns/@Html.DisplayFor(modelItem => item.photo)" /></td>
+                    </tr>
+                    <tr>
+                    
+                    </tr>
+            </table>
+            </div>
+          }
+          </div>
+      </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}

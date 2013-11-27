@@ -1,0 +1,107 @@
+﻿@model UnhandledExceptionProject.Models.Performer
+@{
+    ViewBag.Title = "ShowBusiness: Create Performer";
+    Html.RenderPartial("_Header");
+}
+<div class="container">
+     @{
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+     @Html.AntiForgeryToken()
+     
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Add Performer</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.first_name)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.first_name)
+                                                @Html.ValidationMessageFor(model => model.first_name)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.last_name)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.last_name)
+                                                @Html.ValidationMessageFor(model => model.last_name)
+                    </td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.street_address)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.street_address)
+                                                 @Html.ValidationMessageFor(model => model.street_address)
+                    </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.city)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.city)
+                                                @Html.ValidationMessageFor(model => model.city)
+                        </td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.state)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.state)
+                                                @Html.ValidationMessageFor(model => model.state)
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.zip)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.zip)
+                                                @Html.ValidationMessageFor(model => model.zip)  
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.phone)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.phone)
+                                                @Html.ValidationMessageFor(model => model.phone)  
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.email)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.email)
+                                                @Html.ValidationMessageFor(model => model.email)
+                           
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.age)</td>
+                        <td class="indexinfo">
+                            @Html.EditorFor(model => model.age)
+                            @Html.ValidationMessageFor(model => model.age)
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.photo)</td>
+                        <td class="indexinfo">
+                            @Html.EditorFor(model => model.photo)
+                            @Html.ValidationMessageFor(model => model.photo)
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

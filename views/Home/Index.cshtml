@@ -1,0 +1,51 @@
+﻿@model UnhandledExceptionProject.Models.User
+
+@{
+    ViewBag.Title = "Show Business Dashboard";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-11"><h1 class="dash">Welcome back!</h1></div>
+      <!-- We need to add the user's name to the welcome statement -->
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="dash">
+            <div class="col-md-3">
+                <div class="updates">
+                    <h1 class="updates">Updates</h1>
+                    <ul class="updates">
+                        <li>Welcome to ShowBusiness!</li>
+                        <li>We are happy to announce our initial rollout of the site!</li>
+                        <li>We may or may not have cookies...</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="dashoptions">
+                    <h1 class="dashoptions">Dashboard</h1>
+                    @Html.ActionLink("Manage Inventory", "browse", "Home", new object { }, new { @class = "dashoptions" })<br />
+                    @Html.ActionLink("Logout", "Logout", "Home", new object { }, new { @class = "dashoptions" })<br />
+
+                    <br />
+
+                    <h1 class="dashoptions" style="font-size: 2em; font-style:italic">Quick Links</h1>
+                    @Html.ActionLink("Add New Rental", "Create", "Rentals", new object { }, new { @class = "dashoptions" })<br />
+                    @Html.ActionLink("Record Alteration", "Create", "Alterations", new object { }, new { @class = "dashoptions" }) <br />
+                    @Html.ActionLink("Record Damage", "Create", "Damages", new object { }, new { @class = "dashoptions"})
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}

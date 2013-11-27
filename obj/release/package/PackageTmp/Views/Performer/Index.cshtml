@@ -1,0 +1,79 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Performer>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+    <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model)
+            {
+                <div class="index">
+                    <table class="index">
+                        <tr>
+                            <td class="index" colspan="5">Performer: @Html.DisplayFor(modelItem => item.first_name) @Html.DisplayFor(modelItem => item.last_name)</td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.street_address)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.street_address)</td>
+                            <td class="indexlabel"></td>
+                            <td class="indexinfo"></td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.city)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.city)</td>
+                            <td class="indexlabel"> @Html.DisplayNameFor(model => model.state) </td>
+                            <td class="indexinfo"> @Html.DisplayFor(modelItem => item.state) </td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.zip)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.zip)</td>
+                            <td class="indexlabel"></td>
+                            <td class="indexinfo"></td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.phone)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.phone)</td>
+                            <td class="indexlabel"> </td>
+                            <td class="indexinfo"> </td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.email)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.email)</td>
+                            <td class="indexlabel"> </td>
+                            <td class="indexinfo"> </td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.age)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.age)</td>
+                            <td class="indexlabel"> </td>
+                            <td class="indexinfo"> </td>
+                        </tr>
+                        <tr>
+                            <td class="indexlabel">@Html.DisplayNameFor(model => model.photo)</td>
+                            <td class="indexinfo">@Html.DisplayFor(modelItem => item.photo)</td>
+                            <td class="indexlabel"> </td>
+                            <td class="indexinfo"> </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.performer_ID }) |
+                                @Html.ActionLink("Delete", "Delete", "Performer", new { id = item.performer_ID }, new { @class = "delete" })
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}

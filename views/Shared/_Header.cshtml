@@ -1,0 +1,29 @@
+﻿
+<div class="container">
+    <div class="row">
+      <div class="col-md-4"><img class="header" src="~/Content/Images/home_title.png" /></div>
+      <div class="col-md-8 navigation">
+          <ul class="nav nav-pills">
+            <li class="dropdown" style="float:right;">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Actions <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Dashboard", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Browse", "browse", "Home")</li>
+                </ul>
+            </li>
+            <li class="dropdown" style="float:right;">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Log Out", "Logout", "Home")</li>
+                    <li>@Html.ActionLink("Terms of Service", "terms", "Home")</li>
+                    <li>@Html.ActionLink("Privacy", "privacy", "Home")</li>
+                </ul>
+            </li>
+          </ul>
+      </div>
+    </div>
+
+<div class="red"></div>
+</div>

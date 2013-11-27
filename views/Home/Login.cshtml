@@ -1,0 +1,56 @@
+﻿@model UnhandledExceptionProject.Models.User
+
+@{
+    ViewBag.Title = "ShowBusiness";
+}
+
+<img class="loginbg" src="~/Content/Images/1.jpg" />
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <div class="center login">
+        <img src="~/Content/Images/home_title.png" />
+        <div class="center loginfields">
+        <table>
+            <tr>
+                <td><span class="editor-label">Username:</span></td>
+                <td>
+                    <span class="editor-field">
+                        @Html.EditorFor(model => model.userName)
+                        @Html.ValidationMessageFor(model => model.userName)
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="editor-label">Password:</span></td>
+                <td>
+                    <span class="editor-field">
+                        @Html.PasswordFor(model => model.userPass)
+                        @Html.ValidationMessageFor(model => model.userPass)
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class="signup">@Html.ActionLink("(+) Sign Up", "Create", "User", new object { }, new { @class = "signup" })</span>
+                    <input type="submit" class="button" value="Login" />
+                </td>
+            </tr>
+        </table>
+        </div>
+        <h2 class="login">Your Organized Inventory Resource</h2>
+    </div>
+}
+
+<div class="top">
+</div>
+
+<div class="bottomlinks">
+    <span style="float:left;" class="footer">CSCI 3310 - Unhandled Exception &copy; 2013</span>
+    <span style="float:right;">@Html.ActionLink("Terms of Service", "terms", new object { }, new { @class = "footer" }) | @Html.ActionLink("Privacy", "privacy", new object { }, new { @class = "footer" })</span>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,101 @@
+﻿@model UnhandledExceptionProject.Models.Alteration
+
+@{
+    ViewBag.Title = "Edit";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+     @{
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+     @Html.AntiForgeryToken()
+     
+     @Html.HiddenFor(model => model.alteration_ID)
+     
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Edit Alteration</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">Garment</td>
+                        <td class="indexinfo"><select id="garment_ID" name="garment_ID">
+
+    @foreach (var choice in ViewBag.GarmentList)
+    {
+        <option value="@choice">@choice</option>
+    }
+</select>
+
+                                                @Html.ValidationMessageFor(model => model.garment_ID)</td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">Prop</td>
+                        <td class="indexinfo"><select id="prop_ID" name="prop_ID">
+
+    @foreach (var choice in ViewBag.PropList)
+    {
+        <option value="@choice">@choice</option>
+    }
+</select>
+
+                                                @Html.ValidationMessageFor(model => model.prop_ID)</td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.date_altered)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.date_altered)
+                                                 @Html.ValidationMessageFor(model => model.date_altered)
+                    </td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.permanent)</td>
+                        <td class="indexinfo">
+                                     @Html.EditorFor(model => model.permanent)
+                                     @Html.ValidationMessageFor(model => model.permanent)
+</td>
+                        
+                    </tr>
+                    <tr>
+                        
+                        <td class="indexlabel">@Html.LabelFor(model => model.previous_state)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.previous_state)
+                                            @Html.ValidationMessageFor(model => model.previous_state)
+
+                                                <td class="indexlabel"></td>
+                                                <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.new_state)</td>
+                        <td class="indexinfo"> @Html.EditorFor(model => model.new_state)
+                                                @Html.ValidationMessageFor(model => model.new_state)  
+                        </td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                   
+
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

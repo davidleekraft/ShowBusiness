@@ -1,0 +1,53 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Size>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+      <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model) {
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Size For: @Html.DisplayFor(modelItem => item.size_ID)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.performer_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.performer_ID)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.prop_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.prop_ID)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.garment_ID)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.garment_ID)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.type)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.type)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.value)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.value)</td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                    </tr>
+                    <tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.size_ID }) |
+                        @Html.ActionLink("Delete", "Delete", "Size", new { id = item.size_ID }, new { @class = "delete" })
+                    </td>
+                    </tr>
+            </table>
+            </div>
+          }
+          </div>
+      </div>
+    </div>
+
+@{
+    Html.RenderPartial("_Footer");
+}

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Category>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        //Renders a partial view which holds the template HTML for the browse page
+        Html.RenderPartial("_Browse");
+    }
+      <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model) {
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">@Html.DisplayFor(modelItem => item.category_title)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.category_desc)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.category_desc)</td>
+                        <td class="indexlabel">@Html.DisplayNameFor(model => model.time_period)</td>
+                        <td class="indexinfo">@Html.DisplayFor(modelItem => item.time_period)</td>
+                    </tr>
+                    <tr>
+                        
+                    </tr>
+                    <tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.category_ID }) |
+                        @Html.ActionLink("Delete", "Delete", "Category", new { id = item.category_ID }, new { @class = "delete" })
+                    </td>
+                    </tr>
+            </table>
+            </div>
+          }
+          </div>
+      </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<UnhandledExceptionProject.Models.Material>
+
+@{
+    ViewBag.Title = "ShowBusiness: Browse";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+    @{
+        Html.RenderPartial("_Browse");
+    }
+      <div class="col-md-9">
+        <div class="browse">
+            @foreach (var item in Model) {
+                <div class="index">
+                <table class="index">
+                    <tr>
+                         @*Display only the description of a Material*@
+                        <td class="index" colspan="5">@Html.DisplayFor(modelItem => item.description)</td>
+                    </tr>
+                    
+                    <tr>
+                    <td>
+                        @*Create links that allow the user to edit and delete materials*@ 
+                        @Html.ActionLink("Edit", "Edit", new { id=item.material_ID}) |
+                        @Html.ActionLink("Delete", "Delete", "Material", new { id = item.material_ID }, new { @class = "delete" })
+                    </td>
+                    </tr>
+            </table>
+            </div>
+          }
+          </div>
+      </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}

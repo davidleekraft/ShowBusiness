@@ -1,0 +1,111 @@
+﻿@model UnhandledExceptionProject.Models.Garment
+
+@{
+    ViewBag.Title = "Edit";
+    Html.RenderPartial("_Header");
+}
+
+<div class="container">
+     @{
+        Html.RenderPartial("_Browse");
+     }
+ @using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.garment_ID)
+    @Html.HiddenFor(model => model.costume_ID)
+    @Html.HiddenFor(model => model.name)
+      <div class="col-md-9">
+        <div class="browse">
+                <div class="index">
+                <table class="index">
+                    <tr>
+                        <td class="index" colspan="5">Edit: @Html.DisplayFor(model => model.name)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.type)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.type)
+                                                @Html.ValidationMessageFor(model => model.type)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.rented)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.rented)
+                                                @Html.ValidationMessageFor(model => model.rented)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.main_category_ID)</td>
+                        <td class="indexinfo">
+                            <select id="main_category_ID" name="main_category_ID">
+                                @foreach(var choice in ViewBag.CategoryList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                                                @Html.ValidationMessageFor(model => model.main_category_ID)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.rentable)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.rentable)
+                                                @Html.ValidationMessageFor(model => model.rentable)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.sub_category_ID)</td>
+                        <td class="indexinfo">
+                            <select id="sub_category_ID" name="sub_category_ID">
+                                @foreach(var choice in ViewBag.CategoryList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                                                @Html.ValidationMessageFor(model => model.sub_category_ID)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.material_ID)</td>
+                        <td class="indexinfo">
+                            <select id="material_ID" name="material_ID">
+                                @foreach(var choice in ViewBag.MaterialList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                                                @Html.ValidationMessageFor(model => model.material_ID)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.pattern_ID)</td>
+                        <td class="indexinfo">
+                            <select id="pattern_ID" name="pattern_ID">
+                                @foreach (var choice in ViewBag.PatternList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                                                @Html.ValidationMessageFor(model => model.pattern_ID)</td>
+                        <td class="indexlabel">@Html.LabelFor(model => model.last_cleaned_date)</td>
+                        <td class="indexinfo">@Html.EditorFor(model => model.last_cleaned_date)
+                                                @Html.ValidationMessageFor(model => model.last_cleaned_date)</td>
+                    </tr>
+                    <tr>
+                        <td class="indexlabel">@Html.LabelFor(model => model.storage_ID)</td>
+                        <td class="indexinfo">
+                            <select id="storage_ID" name="storage_ID">
+                                @foreach(var choice in ViewBag.StorageLocationList)
+                                {
+                                    <option value="@choice">@choice</option>
+                                }
+                            </select>
+                                                @Html.ValidationMessageFor(model => model.storage_ID)</td>
+                        <td class="indexlabel"></td>
+                        <td class="indexinfo"></td>
+                        </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="button" value="Save" /></td>
+                    </tr>
+            </table>
+            </div>
+          </div>
+      </div>
+ }
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Footer");
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
